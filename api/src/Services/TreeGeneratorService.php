@@ -13,19 +13,11 @@ class TreeGeneratorService
         private readonly CsvParserService $csvParserService,
     ) {}
 
-    private function memoryUsage()
-    {
-        $size = memory_get_usage(true);
-        $unit=array('b','kb','mb','gb','tb','pb');
-        return @round($size/ (1024 ** ($i = floor(log($size, 1024)))),2).' '.$unit[$i];
-    }
-
     /**
      * @throws JsonException
      */
     public function generateJsonTree(string $inputFile, string $outputFile): void
     {
-        ini_set('memory_limit', '100m');
         $csvScheme = $this->csvParserService->parse($inputFile);
         $nodeList = $this->generateTree($csvScheme);
 
@@ -33,16 +25,12 @@ class TreeGeneratorService
             $nodeList[$key] = $node->toArray();
         }
 
-        var_dump($this->memoryUsage());
         file_put_contents($outputFile, \Eva\Common\Functions\json_encode($nodeList, JSON_UNESCAPED_UNICODE));
     }
 
     private function generateTree(array $scheme): array
     {
-        $rootNodeList = $this->findRootNodes($scheme);
-
-
-        return $rootNodeList;
+        return $this->findRootNodes($scheme);
     }
 
     private function findNodesByParentName(array $scheme, string $parentName): array
@@ -52,10 +40,10 @@ class TreeGeneratorService
             if ($row['Parent'] === $parentName) {
                 $name = $row['Item Name'];
                 $children = $this->findNodesByParentName($scheme, $name);
-//                if ($row['Type'] === 'Прямые компоненты') {
-//                    $relation = $this->findByName($scheme, $row['Relation'])->getChildren();
-//                    array_push($children, ...$relation);
-//                }
+                if ($row['Type'] === 'Прямые компоненты') {
+                    $relation = $this->findByName($scheme, $row['Relation'])->getChildren();
+                    array_push($children, ...$relation);
+                }
                 $nodeList[] = new Node(
                     $name,
                     $parentName,
@@ -100,10 +88,10 @@ class TreeGeneratorService
         foreach ($scheme as $row) {
             if ($row['Parent'] === '') {
                 $children = $this->findNodesByParentName($scheme, $row['Item Name']);
-//                if ($row['Type'] === 'Прямые компоненты') {
-//                    $relation = $this->findByName($scheme, $row['Relation'])->getChildren();
-//                    array_push($children, ...$relation);
-//                }
+                if ($row['Type'] === 'Прямые компоненты') {
+                    $relation = $this->findByName($scheme, $row['Relation'])->getChildren();
+                    array_push($children, ...$relation);
+                }
 
                 $nodeList[] = new Node(
                     $row['Item Name'],
