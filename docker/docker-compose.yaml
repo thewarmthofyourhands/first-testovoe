@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  api:
+    build: ./images/api
+    working_dir: /code
+    volumes:
+      - ./images/api/docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ../api:/code

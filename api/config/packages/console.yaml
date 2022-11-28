@@ -1,0 +1,2 @@
+list: Eva\Console\Commands\ListCommand
+generate.tree.json: App\Commands\GenerateJsonTreeCommand

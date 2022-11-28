@@ -1,0 +1,19 @@
+{
+    "minimum-stability": "dev",
+    "prefer-stable": false,
+    "require": {
+        "ext-curl": "*",
+        "ext-pdo": "*",
+        "eva/env": "dev-main",
+        "eva/event-dispatcher": "dev-main",
+        "eva/console": "dev-main",
+        "eva/dependency-injection": "dev-main",
+        "eva/foundation": "dev-main",
+        "eva/common": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

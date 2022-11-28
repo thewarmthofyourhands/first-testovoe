@@ -1,0 +1,26 @@
+services:
+  App:
+    resource: /src
+    exclude: /src/Application.php
+
+  Eva\Console\EventListeners:
+    resource: /vendor/eva/console/src/EventListeners
+
+  Eva\Console\Commands:
+    resource: /vendor/eva/console/src/Commands
+
+  Eva\Console\RouterInterface:
+    class: Eva\Console\Router
+    calls:
+      - setRoutes: '%package.console%'
+
+  Eva\Console\Commands\ListCommand:
+    arguments:
+      commands: '%package.console%'
+
+  App\Commands\GenerateJsonTreeCommand:
+    arguments:
+      projectDir: '%kernel.project_dir%'
+
+service_providers:
+  - Eva\EventDispatcher\EventDispatcherProvider

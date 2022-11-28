@@ -1,0 +1,657 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "9ab3815e1cab787a6bce4efb7e9451c7",
+    "packages": [
+        {
+            "name": "eva/common",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thewarmthofyourhands/common.git",
+                "reference": "78745a5d019ccc908bf129bcad8e3d4300f42bc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thewarmthofyourhands/common/zipball/78745a5d019ccc908bf129bcad8e3d4300f42bc8",
+                "reference": "78745a5d019ccc908bf129bcad8e3d4300f42bc8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions/helpers.php",
+                    "src/functions/json.php"
+                ],
+                "psr-4": {
+                    "Eva\\Common\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thewarmthofyourhands"
+                }
+            ],
+            "description": "Common",
+            "homepage": "https://github.com/thewarmthofyourhands",
+            "support": {
+                "issues": "https://github.com/thewarmthofyourhands/common/issues",
+                "source": "https://github.com/thewarmthofyourhands/common/tree/main"
+            },
+            "time": "2022-11-24T20:16:05+00:00"
+        },
+        {
+            "name": "eva/console",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thewarmthofyourhands/console.git",
+                "reference": "5ce9159bc75cd20ba203430816615d5a89a2bd34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thewarmthofyourhands/console/zipball/5ce9159bc75cd20ba203430816615d5a89a2bd34",
+                "reference": "5ce9159bc75cd20ba203430816615d5a89a2bd34",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "psr/container": "^1.1|^2.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Eva\\Console\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thewarmthofyourhands"
+                }
+            ],
+            "description": "Cli kernel",
+            "homepage": "https://github.com/thewarmthofyourhands",
+            "support": {
+                "issues": "https://github.com/thewarmthofyourhands/console/issues",
+                "source": "https://github.com/thewarmthofyourhands/console/tree/main"
+            },
+            "time": "2022-11-24T20:16:26+00:00"
+        },
+        {
+            "name": "eva/dependency-injection",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thewarmthofyourhands/dependency-injection.git",
+                "reference": "0bc2c1737acaf055ef911261dfa115d6acfa96e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thewarmthofyourhands/dependency-injection/zipball/0bc2c1737acaf055ef911261dfa115d6acfa96e1",
+                "reference": "0bc2c1737acaf055ef911261dfa115d6acfa96e1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "psr/container": "^1.1|^2.0",
+                "symfony/yaml": "^6.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Eva\\DependencyInjection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thewarmthofyourhands"
+                }
+            ],
+            "description": "Dependency injection",
+            "homepage": "https://github.com/thewarmthofyourhands",
+            "support": {
+                "issues": "https://github.com/thewarmthofyourhands/dependency-injection/issues",
+                "source": "https://github.com/thewarmthofyourhands/dependency-injection/tree/main"
+            },
+            "time": "2022-11-24T22:22:34+00:00"
+        },
+        {
+            "name": "eva/env",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thewarmthofyourhands/dotenv.git",
+                "reference": "2d7bbe5d0d5715ce7ae6a981a3e5bcf8d56d4baa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thewarmthofyourhands/dotenv/zipball/2d7bbe5d0d5715ce7ae6a981a3e5bcf8d56d4baa",
+                "reference": "2d7bbe5d0d5715ce7ae6a981a3e5bcf8d56d4baa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Eva\\Env\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "thewarmthofyourhands"
+                }
+            ],
+            "description": "Load env variables",
+            "homepage": "https://github.com/thewarmthofyourhands/dotenv",
+            "support": {
+                "issues": "https://github.com/thewarmthofyourhands/dotenv/issues",
+                "source": "https://github.com/thewarmthofyourhands/dotenv/tree/main"
+            },
+            "time": "2022-11-24T20:18:16+00:00"
+        },
+        {
+            "name": "eva/event-dispatcher",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thewarmthofyourhands/event-dispatcher.git",
+                "reference": "56287649479e2cf6b9850ddd5f5652d7a5c0e7ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thewarmthofyourhands/event-dispatcher/zipball/56287649479e2cf6b9850ddd5f5652d7a5c0e7ef",
+                "reference": "56287649479e2cf6b9850ddd5f5652d7a5c0e7ef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "psr/container": "^1.1|^2.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Eva\\EventDispatcher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thewarmthofyourhands"
+                }
+            ],
+            "description": "Common event dispatcher",
+            "homepage": "https://github.com/thewarmthofyourhands/event-dispatcher",
+            "support": {
+                "issues": "https://github.com/thewarmthofyourhands/event-dispatcher/issues",
+                "source": "https://github.com/thewarmthofyourhands/event-dispatcher/tree/main"
+            },
+            "time": "2022-11-24T20:19:50+00:00"
+        },
+        {
+            "name": "eva/foundation",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thewarmthofyourhands/foundation.git",
+                "reference": "b7463c02f1b9ded0a01bcc7e6a39e425ba024fb6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thewarmthofyourhands/foundation/zipball/b7463c02f1b9ded0a01bcc7e6a39e425ba024fb6",
+                "reference": "b7463c02f1b9ded0a01bcc7e6a39e425ba024fb6",
+                "shasum": ""
+            },
+            "require": {
+                "eva/console": "dev-main",
+                "eva/http-request": "dev-main",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Eva\\Foundation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thewarmthofyourhands"
+                }
+            ],
+            "description": "Foundation",
+            "homepage": "https://github.com/thewarmthofyourhands",
+            "support": {
+                "issues": "https://github.com/thewarmthofyourhands/foundation/issues",
+                "source": "https://github.com/thewarmthofyourhands/foundation/tree/main"
+            },
+            "time": "2022-11-24T21:42:26+00:00"
+        },
+        {
+            "name": "eva/http-request",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thewarmthofyourhands/http-request.git",
+                "reference": "a6b08b69c3448f2ed6fce7f4d4c15829aeacb0c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thewarmthofyourhands/http-request/zipball/a6b08b69c3448f2ed6fce7f4d4c15829aeacb0c4",
+                "reference": "a6b08b69c3448f2ed6fce7f4d4c15829aeacb0c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Eva\\Http\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thewarmthofyourhands"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/thewarmthofyourhands",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "issues": "https://github.com/thewarmthofyourhands/http-request/issues",
+                "source": "https://github.com/thewarmthofyourhands/http-request/tree/main"
+            },
+            "time": "2022-11-24T22:29:35+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "90db7b9ac2a2c5b849fcb69dde58f3ae182c68f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/90db7b9ac2a2c5b849fcb69dde58f3ae182c68f5",
+                "reference": "90db7b9ac2a2c5b849fcb69dde58f3ae182c68f5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container/tree/master"
+            },
+            "time": "2022-07-19T17:36:59+00:00"
+        },
+        {
+            "name": "psr/http-factory",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-factory.git",
+                "reference": "5a4f141ac2e5bc35e615134f127e1833158d2944"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-factory/zipball/5a4f141ac2e5bc35e615134f127e1833158d2944",
+                "reference": "5a4f141ac2e5bc35e615134f127e1833158d2944",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0",
+                "psr/http-message": "^1.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interfaces for PSR-7 HTTP message factories",
+            "keywords": [
+                "factory",
+                "http",
+                "message",
+                "psr",
+                "psr-17",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-factory/tree/master"
+            },
+            "time": "2022-07-14T07:21:53+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "efd67d1dc14a7ef4fc4e518e7dee91c271d524e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/efd67d1dc14a7ef4fc4e518e7dee91c271d524e4",
+                "reference": "efd67d1dc14a7ef4fc4e518e7dee91c271d524e4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/master"
+            },
+            "time": "2019-08-29T13:16:46+00:00"
+        },
+        {
+            "name": "symfony/polyfill-ctype",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "5bbc823adecdae860bb64756d639ecfec17b050a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/5bbc823adecdae860bb64756d639ecfec17b050a",
+                "reference": "5bbc823adecdae860bb64756d639ecfec17b050a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "provide": {
+                "ext-ctype": "*"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.27-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.27.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-11-03T14:55:06+00:00"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "6.3.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "f2570f21bd4adc3589aa3133323273995109bae0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/f2570f21bd4adc3589aa3133323273995109bae0",
+                "reference": "f2570f21bd4adc3589aa3133323273995109bae0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/polyfill-ctype": "^1.8"
+            },
+            "conflict": {
+                "symfony/console": "<5.4"
+            },
+            "require-dev": {
+                "symfony/console": "^5.4|^6.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
+            "bin": [
+                "Resources/bin/yaml-lint"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Loads and dumps YAML files",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/yaml/tree/6.2"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-11-25T19:00:27+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "eva/env": 20,
+        "eva/event-dispatcher": 20,
+        "eva/console": 20,
+        "eva/dependency-injection": 20,
+        "eva/foundation": 20,
+        "eva/common": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "ext-curl": "*",
+        "ext-pdo": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
