@@ -4,17 +4,23 @@ declare(strict_types=1);
 
 namespace App\Commands;
 
-use App\Services\TreeGeneratorService;
+use App\Dto\UseCase\GenerateTreeHandlerInputDto;
+use App\UseCase\GenerateTreeHandler;
 use Eva\Console\ArgvInput;
+use JsonException;
 use RuntimeException;
+use function App\Functions\memoryPeakUsage;
 
 class GenerateJsonTreeCommand
 {
     public function __construct(
         private readonly string $projectDir,
-        private readonly TreeGeneratorService $treeGeneratorService,
+        private readonly GenerateTreeHandler $generateTreeHandler,
     ) {}
 
+    /**
+     * @throws JsonException
+     */
     public function execute(ArgvInput $argvInput): void
     {
         if (false === isset($argvInput->getOptions()['input-file'])) {
@@ -24,10 +30,19 @@ class GenerateJsonTreeCommand
         $inputFile = $this->projectDir . $argvInput->getOptions()['input-file'];
         $outputFile = $argvInput->getOptions()['output-file'] ?? '/task/output.json';
         $outputFile =  $this->projectDir . $outputFile;
-        $this->treeGeneratorService->generateJsonTree($inputFile, $outputFile);
+        $generateTreeHandlerInputDto = new GenerateTreeHandlerInputDto([
+            'inputFile' => $inputFile,
+            'outputFile' => $outputFile,
+        ]);
+        $this->generateTreeHandler->handle($generateTreeHandlerInputDto);
+        $memoryPeakUsage = memoryPeakUsage();
+        $executeTime = microtime(true) - START_TIME;
+
 
         echo <<<EOF
         Tree generated successful in $outputFile
+        Memory peak usage: $memoryPeakUsage
+        Execute time: $executeTime
         
         EOF;
     }

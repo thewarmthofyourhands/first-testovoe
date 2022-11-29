@@ -12,6 +12,9 @@
         "eva/common": "dev-main"
     },
     "autoload": {
+        "files": [
+            "src/functions/helpers.php"
+        ],
         "psr-4": {
             "App\\": "src/"
         }

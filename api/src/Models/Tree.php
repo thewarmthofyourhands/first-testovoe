@@ -6,15 +6,15 @@ namespace App\Models;
 
 class Tree
 {
-    /** @var TestNode[] $nodeList */
+    /** @var Node[] $nodeList */
     private array $nodeList = [];
 
-    public function addNode(TestNode $node): void
+    public function addNode(Node $node): void
     {
         array_unshift($this->nodeList, $node);
     }
 
-    public function findNodeByItemName(string $itemName): null|TestNode
+    public function findNodeByItemName(string $itemName): null|Node
     {
         $foundNode = null;
 

@@ -12,4 +12,3 @@ $application = new Eva\Foundation\Console\ConsoleApplication();
 
 $consoleKernel = $application->getContainer()->get('kernel');
 $consoleKernel->handle(new Eva\Console\ArgvInput());
-print_r(microtime(true) - START_TIME);

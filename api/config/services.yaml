@@ -22,9 +22,5 @@ services:
     arguments:
       projectDir: '%kernel.project_dir%'
 
-  App\Commands\TestCommand:
-    arguments:
-      projectDir: '%kernel.project_dir%'
-
 service_providers:
   - Eva\EventDispatcher\EventDispatcherProvider

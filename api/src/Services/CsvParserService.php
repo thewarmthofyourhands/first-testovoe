@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Dto\Services\CsvRowDto;
 use Generator;
 use RuntimeException;
 
@@ -26,10 +27,15 @@ class CsvParserService
                 continue;
             }
 
-            $csvRow = $this->parseLine($csvLine);
-            $csvRow = array_combine($columnList, $csvRow);
+            $csvRow = array_combine($columnList, $this->parseLine($csvLine));
+            $csvRowDto = new CsvRowDto([
+                'itemName' => $csvRow['Item Name'],
+                'type' => $csvRow['Type'],
+                'parent' => $csvRow['Parent'] === '' ? null : $csvRow['Parent'],
+                'relation' => $csvRow['Relation'],
+            ]);
 
-            $csvSchema[] = $csvRow;
+            $csvSchema[] = $csvRowDto;
         }
 
         fclose($stream);
@@ -49,10 +55,19 @@ class CsvParserService
                 break;
             }
 
-            $csvRow = $this->parseLine($csvLine);
-            $csvRow = array_combine($columnList, $csvRow);
+            if ($csvLine === '' || $csvLine === PHP_EOL) {
+                continue;
+            }
 
-            yield $csvRow;
+            $csvRow = array_combine($columnList, $this->parseLine($csvLine));
+            $csvRowDto = new CsvRowDto([
+                'itemName' => $csvRow['Item Name'],
+                'type' => $csvRow['Type'],
+                'parent' => $csvRow['Parent'] === '' ? null : $csvRow['Parent'],
+                'relation' => $csvRow['Relation'],
+            ]);
+
+            yield $csvRowDto;
         }
 
         fclose($stream);
