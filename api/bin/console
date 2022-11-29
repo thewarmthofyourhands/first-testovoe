@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+define("START_TIME", microtime(true));
+
 error_reporting(E_ALL);
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -10,3 +12,4 @@ $application = new Eva\Foundation\Console\ConsoleApplication();
 
 $consoleKernel = $application->getContainer()->get('kernel');
 $consoleKernel->handle(new Eva\Console\ArgvInput());
+print_r(microtime(true) - START_TIME);

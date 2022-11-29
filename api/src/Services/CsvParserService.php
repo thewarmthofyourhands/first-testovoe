@@ -22,6 +22,10 @@ class CsvParserService
                 break;
             }
 
+            if ($csvLine === '' || $csvLine === PHP_EOL) {
+                continue;
+            }
+
             $csvRow = $this->parseLine($csvLine);
             $csvRow = array_combine($columnList, $csvRow);
 

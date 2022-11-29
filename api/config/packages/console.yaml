@@ -1,2 +1,3 @@
 list: Eva\Console\Commands\ListCommand
-generate.tree.json: App\Commands\GenerateJsonTreeCommand
+#generate.tree.json: App\Commands\GenerateJsonTreeCommand
+generate.tree.json: App\Commands\TestCommand
