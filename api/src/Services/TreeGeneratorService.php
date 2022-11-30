@@ -53,7 +53,7 @@ class TreeGeneratorService
 
     private function fillRelation(Tree $tree, Node $newNode, CsvRowDto $csvRowDto, array &$bufferRelationSeeker): void
     {
-        if ($newNode->getType() === NodeTypeEnum::DIRECT_COMPONENTS) {
+        if ($newNode->getType() === NodeTypeEnum::DIRECT_COMPONENTS && null !== $csvRowDto->getRelation()) {
             $relation = $tree->findNodeByItemName($csvRowDto->getRelation());
             $newNode->setRelation($relation);
 

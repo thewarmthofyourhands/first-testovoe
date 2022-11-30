@@ -5,18 +5,21 @@ declare(strict_types=1);
 namespace App\Services;
 
 use App\Dto\Services\CsvRowDto;
+use Eva\Filesystem\Filesystem;
 use Generator;
 use RuntimeException;
 
 class CsvParserService
 {
+    public function __construct(private readonly Filesystem $filesystem = new Filesystem()) {}
+
     public function parse(string $filePath): array
     {
         $csvSchema = [];
         $stream = $this->openFile($filePath);
         $columnList = $this->parseLine($this->getLine($stream));
 
-        while (false === feof($stream)) {
+        while (false === $this->filesystem->feof($stream)) {
             $csvLine = $this->getLine($stream);
 
             if (null === $csvLine) {
@@ -32,13 +35,13 @@ class CsvParserService
                 'itemName' => $csvRow['Item Name'],
                 'type' => $csvRow['Type'],
                 'parent' => $csvRow['Parent'] === '' ? null : $csvRow['Parent'],
-                'relation' => $csvRow['Relation'],
+                'relation' => $csvRow['Relation'] === '' ? null : $csvRow['Relation'],
             ]);
 
             $csvSchema[] = $csvRowDto;
         }
 
-        fclose($stream);
+        $this->filesystem->fclose($stream);
 
         return $csvSchema;
     }
@@ -48,7 +51,7 @@ class CsvParserService
         $stream = $this->openFile($filePath);
         $columnList = $this->parseLine($this->getLine($stream));
 
-        while (false === feof($stream)) {
+        while (false === $this->filesystem->feof($stream)) {
             $csvLine = $this->getLine($stream);
 
             if (null === $csvLine) {
@@ -64,13 +67,13 @@ class CsvParserService
                 'itemName' => $csvRow['Item Name'],
                 'type' => $csvRow['Type'],
                 'parent' => $csvRow['Parent'] === '' ? null : $csvRow['Parent'],
-                'relation' => $csvRow['Relation'],
+                'relation' => $csvRow['Relation'] === '' ? null : $csvRow['Relation'],
             ]);
 
             yield $csvRowDto;
         }
 
-        fclose($stream);
+        $this->filesystem->fclose($stream);
     }
 
     private function parseLine(string $line): array
@@ -80,7 +83,7 @@ class CsvParserService
 
     private function openFile(string $filePath): mixed
     {
-        $stream = fopen($filePath, 'rb');
+        $stream = $this->filesystem->fopen($filePath, 'rb');
 
         if (false === $stream) {
             throw new RuntimeException('File is not exist');
@@ -91,10 +94,10 @@ class CsvParserService
 
     private function getLine($stream): null|string
     {
-        $csvLine = fgets($stream);
+        $csvLine = $this->filesystem->fgets($stream);
 
         if (false === $csvLine) {
-            if (true === feof($stream)) {
+            if (true === $this->filesystem->feof($stream)) {
                 return null;
             }
 

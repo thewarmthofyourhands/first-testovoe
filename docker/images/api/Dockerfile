@@ -1,4 +1,4 @@
-FROM php:8.1-fpm-buster
+FROM php:8.1-fpm-bullseye
 
 RUN buildDeps="curl libpq-dev libzip-dev libonig-dev openssl libssl-dev libcurl4-openssl-dev  libicu-dev libpng-dev libjpeg62-turbo-dev libfreetype6-dev libmagickwand-6.q16-dev libldap2-dev wget zip unzip libaio1" && \
     apt-get update && \

@@ -7,6 +7,7 @@ namespace App\UseCase;
 use App\Dto\UseCase\GenerateTreeHandlerInputDto;
 use App\Services\CsvParserService;
 use App\Services\TreeGeneratorService;
+use Eva\Filesystem\Filesystem;
 use JsonException;
 
 use function Eva\Common\Functions\json_encode;
@@ -14,8 +15,9 @@ use function Eva\Common\Functions\json_encode;
 class GenerateTreeHandler
 {
     public function __construct(
-       private readonly CsvParserService $csvParserService,
-       private readonly TreeGeneratorService $treeGeneratorService,
+        private readonly CsvParserService $csvParserService,
+        private readonly TreeGeneratorService $treeGeneratorService,
+        private readonly Filesystem $filesystem = new Filesystem(),
     ) {}
 
     /**
@@ -27,9 +29,6 @@ class GenerateTreeHandler
         $outputFile = $generateTreeHandlerInputDto->getOutputFile();
         $csvScheme = $this->csvParserService->parseByGenerator($inputFile);
         $tree = $this->treeGeneratorService->generateTree($csvScheme);
-        file_put_contents(
-            $outputFile,
-            json_encode($tree->toArray(), JSON_UNESCAPED_UNICODE),
-        );
+        $this->filesystem->filePutContents($outputFile, json_encode($tree->toArray(), JSON_UNESCAPED_UNICODE));
     }
 }

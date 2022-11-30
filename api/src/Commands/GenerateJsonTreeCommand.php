@@ -38,7 +38,6 @@ class GenerateJsonTreeCommand
         $memoryPeakUsage = memoryPeakUsage();
         $executeTime = microtime(true) - START_TIME;
 
-
         echo <<<EOF
         Tree generated successful in $outputFile
         Memory peak usage: $memoryPeakUsage

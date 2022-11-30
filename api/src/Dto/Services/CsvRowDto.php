@@ -13,7 +13,7 @@ class CsvRowDto
     private readonly string $itemName;
     private readonly string $type;
     private readonly null|string $parent;
-    private readonly string $relation;
+    private readonly null|string $relation;
 
     public function getItemName(): string
     {
@@ -30,7 +30,7 @@ class CsvRowDto
         return $this->parent;
     }
 
-    public function getRelation(): string
+    public function getRelation(): null|string
     {
         return $this->relation;
     }
